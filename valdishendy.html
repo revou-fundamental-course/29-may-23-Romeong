@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Company Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* CSS code */
+    .container {
+      background-image: url(background.jpg);
+      background-size: 1355px 578px;
+      background-position: center;
+      padding: 170px;
+    }
+    #nama {
+      font-size: 50px;
+      font-weight: bold;
+    }
+    .custom-element {
+      background-image: url(kucing.jpg);
+      background-size: cover;
+      background-position: center;
+      padding: 60px;
+    }
+    .headquarter {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .location-list {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .location {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+    .location-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .location-circle:hover {
+      background-color: #dcdcdc;
+    }
+    .location-label {
+      margin-top: 5px;
+    }
+    .result-box {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+      float: right;
+      width: 300px;
+    }
+  </style>
+  <script>
+    // JavaScript code
+    function isiNama() {
+      var nama = prompt("Masukkan nama Anda:");
+      var elemenNama = document.getElementById("nama");
+      elemenNama.innerHTML = "Hi " + nama + ", Welcome To the Website";
+    }
+
+    function selectLocation(location) {
+      alert('Selected location: ' + location);
+    }
+
+    function submitForm() {
+      var name = document.getElementById("name").value;
+      var birthdate = document.getElementById("birthdate").value;
+      var gender = document.getElementById("gender").value;
+      var message = document.getElementById("message").value;
+
+      document.getElementById("current-time").textContent = new Date().toLocaleString();
+      document.getElementById("result-name").textContent = "Nama: " + name;
+      document.getElementById("result-birthdate").textContent = "Tanggal Lahir: " + birthdate;
+      document.getElementById("result-gender").textContent = "Jenis Kelamin: " + gender;
+      document.getElementById("result-message").textContent = "Pesan: " + message;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Val Industries Logo">
+      <h1>CAT Industries</h1>
+    </div>
+    <nav>
+      <table>
+        <tr>
+          <td><a href="#home">Home</a></td>
+          <td><a href="#profile">Our Profile</a></td>
+          <td><a href="#portfolio">Portfolio</a></td>
+          <td><a href="#message">Message Us</a></td>
+        </tr>
+      </table>
+    </nav>
+  </header>
+  <body onload="isiNama()">
+    <div class="container">
+      <h1 id="nama"></h1>
+    </div>
+  </body>
+  <main>
+    <div class="custom-element">
+      <div class="headquarter">
+        <h2>Our Headquarter</h2>
+        <div class="location-list">
+          <div class="location">
+            <div class="location-circle" onclick="selectLocation('Jakarta')">
+              <span>Jakarta</span>
+            </div>
+          </div>
+          <div class="location">
+            <div class="location-circle" onclick="selectLocation('Bandung')">
+              <span>Bandung</span>
+            </div>
+          </div>
+          <div class="location">
+            <div class="location-circle" onclick="selectLocation('Surabaya')">
+              <span>Surabaya</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="message">
+        <h2>Message Us</h2>
+        <table>
+          <tr>
+            <td>Nama:</td>
+            <td><input type="text" id="name"></td>
+          </tr>
+          <tr>
+            <td>Tanggal Lahir:</td>
+            <td><input type="date" id="birthdate"></td>
+          </tr>
+          <tr>
+            <td>Jenis Kelamin:</td>
+            <td>
+              <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Pesan:</td>
+            <td><textarea id="message"></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><button onclick="submitForm()">Submit</button></td>
+          </tr>
+        </table>
+      </section>
+      <section id="result">
+        <h2>Form Submission Result</h2>
+        <div class="result-box">
+          <p id="current-time"></p>
+          <p id="result-name"></p>
+          <p id="result-birthdate"></p>
+          <p id="result-gender"></p>
+          <p id="result-message"></p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
