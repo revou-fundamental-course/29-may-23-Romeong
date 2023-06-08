@@ -1,0 +1,40 @@
+/* Add your desired styles for the website */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #d4c7c7;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  nav table {
+    margin-top: 10px;
+  }
+  
+  nav table td {
+    padding: 0 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  #welcome {
+    margin-top: 
+
+    
+
+
+  
